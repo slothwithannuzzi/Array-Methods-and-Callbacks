@@ -134,9 +134,20 @@ Create a function called `getCountryWins` that takes the parameters `data` and `
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(data, teamInt) {
 
-    /* code here */
+    const intToTeam = data.filter((data) => {
+        return teamInt === data["Home Team Initials"] || teamInt === data["Away Team Initials"]
+    })
+    let winCounter = 0;
+    for (let i = 0; i < intToTeam.length; i++) {
+        if (teamInt === intToTeam[i]["Home Team Initials"] && intoTeam[i]["Home Team Goals"] > intoTeam[i]["Away Team Goals"]) {
+            winCounter++;
+        } else if (teamInt === intToTeam[i]["Away Team Initials"] && intoTeam[i]["Home Team Goals"] < intoTeam[i]["Away Team Goals"]) {
+            winCounter++;
+        }
+    }
+    return `${teamInt} has won ${winCounter} games.`;
 
 }
 
@@ -145,9 +156,17 @@ function getCountryWins(/* code here */) {
 /* 💪💪💪💪💪 Stretch 2: 💪💪💪💪💪 
 Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
 
-function getGoals(/* code here */) {
+function getCountryWins(data, teamInt) {
 
-    /* code here */
+    const intToTeam = data.filter((data) => {
+        return teamInt === data["Home Team Initials"] || teamInt === data["Away Team Initials"]
+    })
+
+    for (let i = 0; i < intToTeam.length; i++) {
+        if (teamInt === intToTeam[i]["Home Team Initials"]) {
+
+        } 
+    }
 
 }
 
