@@ -94,7 +94,13 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(data, getYears, getWinners) {
-    
+    const yearArr = getYears(data, getFinals);
+    const winnerArr = getWinners(data, getFinals);
+    const stringArr = [];
+    for (let i = 0; i < yearArr.length; i++) {
+      stringArr.push(`In ${yearArr[i]}, ${winnerArr[i]} won the world cup!`)
+    }
+    return stringArr;
 }
 
 
