@@ -15,9 +15,16 @@ Practice accessing data by console.log-ing the following pieces of data note, yo
 
 //(e) Winner of 2014 world cup final */
 
-const arr2014 = fifaData.filter((data) => {
-    return data.Year === 2014;
+const final2014 = fifaData.filter((data) => {
+    return data.Year === 2014 && data.Stage === "Final";
 })
+
+console.log(final2014[0]["Home Team Name"])
+console.log(final2014[0]["Away Team Name"])
+console.log(final2014[0]["Home Team Goals"])
+console.log(final2014[0]["Away Team Goals"])
+console.log(final2014[0]["Win conditions"])
+
 
 
 
@@ -29,8 +36,16 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-   /* code here */
+function getFinals(data) {
+   const finalArr = data.filter((data) => {
+       return data.Stage === "Final";
+   })
+
+   const teamArr = finalArr.map((data) => {
+       return data["Home Team Name"] && data["Away Team Name"];
+   })
+
+   return teamArr;
 }
 
 
