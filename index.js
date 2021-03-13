@@ -116,11 +116,12 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(getFinals) {
-   const avgGoals = getFinals.reduce((accumulator, data) => {
-       return accumulator += data["Home Team Goals"];
-   }, 0)
-   return avgGoals;
-}
+    const avgGoals = getFinals.reduce((accumulator, data) => {
+        return accumulator += (data["Home Team Goals"] + data["Away Team Goals"])
+    }, 0)
+    const avg = (avgGoals / getFinals.length);
+    return avg.toFixed(2);
+ }
 
 
 
