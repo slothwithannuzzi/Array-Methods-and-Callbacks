@@ -70,9 +70,15 @@ Use the higher-order function getWinners to do the following:
 
 function getWinners(data, getFinals) {
     const winners = getFinals(data).map((data) => {
-        return data["Win conditions"];
+        if (data["Home Team Goals"] > data["Away Team Goals"]) {
+            return data["Home Team Name"];
+        }   else if(data["Home Team Goals"] < data["Away Team Goals"]) {
+            return data["Away Team Name"]
+        }   else {
+            return "neither";
+        }
     })
-    reutrn winners;
+    return winners;
 }
 
 
@@ -87,8 +93,8 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(data, getYears, getWinners) {
+    
 }
 
 
